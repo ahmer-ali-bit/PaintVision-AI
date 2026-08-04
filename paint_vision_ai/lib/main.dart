@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/screens/login.dart';
-import 'package:paint_vision_ai/screens/onboarding_1.dart';
-import 'package:paint_vision_ai/screens/onboarding_dashboard.dart';
-import 'package:paint_vision_ai/screens/verify_number.dart';
+import 'package:paint_vision_ai/screens/home_dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: OnboardingDashboard(),
+      home: HomeDashboardScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
