@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/ai_dashboard.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/ai_dashboard.dart';
 import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/categories.dart';
 import 'package:paint_vision_ai/widgets/search_field.dart';
 import 'package:paint_vision_ai/widgets/see_all_button.dart';

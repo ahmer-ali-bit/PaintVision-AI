@@ -4,8 +4,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/upload%20image/crop%20image/crop_image.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/color_palette.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/upload%20image/crop%20image/crop_image.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/color_palette.dart';
 import 'package:paint_vision_ai/widgets/primary_button.dart';
 
 class UploadPhotoScreen extends StatefulWidget {
