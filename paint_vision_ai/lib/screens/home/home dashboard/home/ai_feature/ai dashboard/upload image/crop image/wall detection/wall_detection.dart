@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/color_palette.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/color_palette.dart';
 
 class WallDetectionScreen extends StatefulWidget {
   const WallDetectionScreen({Key? key}) : super(key: key);

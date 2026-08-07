@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/upload%20image/upload_photo.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/upload%20image/upload_photo.dart';
 
 class AiDashboardScreen extends StatefulWidget {
   const AiDashboardScreen({super.key});

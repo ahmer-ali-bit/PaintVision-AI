@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/ai%20preview/lighting%20preview/save%20design/save_design.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/upload%20image/crop%20image/wall%20detection/color_palette/ai%20preview/lighting%20preview/lighting_preview.dart';
 
-class LightingPreviewScreen extends StatefulWidget {
-  const LightingPreviewScreen({super.key});
+class AiPreviewScreen extends StatefulWidget {
+  const AiPreviewScreen({super.key});
 
   @override
-  State<LightingPreviewScreen> createState() => _LightingPreviewScreenState();
+  State<AiPreviewScreen> createState() => _AiPreviewScreenState();
 }
 
-class _LightingPreviewScreenState extends State<LightingPreviewScreen> {
+class _AiPreviewScreenState extends State<AiPreviewScreen> {
   int selectedColorIndex = 0;
   bool isFavorite = false;
-  int selectedLightIndex = 0;
 
   final List<Color> paletteColors = [
     const Color(0xFFAEC6E4), // Light blue
@@ -20,8 +19,6 @@ class _LightingPreviewScreenState extends State<LightingPreviewScreen> {
     const Color(0xFF2F4A7C), // Medium navy
     const Color(0xFFB0AC9E), // Beige/Grey
   ];
-
-  final List<String> lightModes = ['Day Light', 'Warm Light', 'Night Light'];
 
   @override
   Widget build(BuildContext context) {
@@ -40,71 +37,17 @@ class _LightingPreviewScreenState extends State<LightingPreviewScreen> {
                 children: [
                   const BackButton(),
                   const Text(
-                    'Lighting Preview',
+                    'AI Preview',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
 
-              SizedBox(height: height * 0.02),
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                 child: Column(
                   children: [
-                    // 💡 LIGHT MODE SELECTOR
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: List.generate(lightModes.length, (index) {
-                        final isSelected = selectedLightIndex == index;
-                        return Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedLightIndex = index;
-                              });
-                            },
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 250),
-                              margin: EdgeInsets.symmetric(
-                                horizontal: width * 0.012,
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                vertical: height * 0.018,
-                              ),
-                              decoration: BoxDecoration(
-                                color: isSelected
-                                    ? const Color(0xFFE8EEFF)
-                                    : Colors.white,
-                                borderRadius: BorderRadius.circular(12),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.15),
-                                    blurRadius: 6,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  lightModes[index],
-                                  style: TextStyle(
-                                    color: isSelected
-                                        ? const Color(0xFF1E4FEB)
-                                        : Colors.black87,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
-
-                    SizedBox(height: height * 0.03),
-
+                    // Before / After Images
                     SizedBox(
                       height: height * 0.4,
                       width: width,
@@ -282,7 +225,8 @@ class _LightingPreviewScreenState extends State<LightingPreviewScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SaveDesignScreen(),
+                                    builder: (context) =>
+                                        LightingPreviewScreen(),
                                   ),
                                 );
                               },
