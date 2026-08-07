@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/cart.dart';
-import 'package:paint_vision_ai/screens/home.dart';
-import 'package:paint_vision_ai/screens/order.dart';
-import 'package:paint_vision_ai/screens/profile.dart';
-import 'package:paint_vision_ai/screens/search.dart';
+import 'package:paint_vision_ai/screens/cart/cart.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/home.dart';
+import 'package:paint_vision_ai/screens/order/order.dart';
+import 'package:paint_vision_ai/screens/profile/profile.dart';
+import 'package:paint_vision_ai/screens/search/search.dart';
 
 class HomeDashboardScreen extends StatefulWidget {
   const HomeDashboardScreen({super.key});
