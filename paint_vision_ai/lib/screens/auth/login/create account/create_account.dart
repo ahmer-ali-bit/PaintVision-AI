@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/login.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home_dashboard.dart';
+import 'package:paint_vision_ai/screens/auth/login/login.dart';
 import 'package:paint_vision_ai/utils/validator.dart';
+import 'package:paint_vision_ai/widgets/primary_button.dart';
 import 'package:paint_vision_ai/widgets/text_form_field.dart';
 import 'package:paint_vision_ai/widgets/validation_checker.dart';
 
@@ -267,35 +269,10 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                     ),
 
                     // ========== REGISTER BUTTON ==========
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: _isFormValid
-                            ? () {
-                                print('Name: ${_name.text}');
-                                print('Email: ${_email.text}');
-                                print('Phone: ${_pNumber.text}');
-                                print('Password: ${_password.text}');
-                              }
-                            : null,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: _isFormValid
-                              ? AppColors.primary
-                              : Colors.grey[400],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: Text(
-                          'Register',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                    PrimaryButton(
+                      text: 'Login',
+                      onTap: _isFormValid ? () {} : null,
+                      isEnabled: _isFormValid,
                     ),
 
                     SizedBox(height: height * 0.03),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/widgets/primary_button.dart';
 import 'package:paint_vision_ai/widgets/text_form_field.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -35,6 +36,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 ),
                 SizedBox(height: height * 0.1),
 
+                // ========== FORGOT TEXT ==========
                 Text(
                   "Forgot Password",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -42,6 +44,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
                 SizedBox(height: height * 0.03),
 
+                // ========== DESCRIPTION TEXT ==========
                 Text(
                   "Enter your email and we'll\nsend you a reset link",
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
@@ -49,6 +52,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
                 SizedBox(height: height * 0.03),
 
+                // ========== TEXT FIELD ==========
                 CTextFormField(
                   hintText: 'Enter your email',
                   controller: _resetmail,
@@ -56,33 +60,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
                 SizedBox(height: height * 0.03),
 
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      ;
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Text(
-                      'Send Reset Link',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+                // ========== SEND RESET LINK BUTTON ==========
+                PrimaryButton(text: 'Send Reset Link', onTap: () {}),
 
                 SizedBox(height: height * 0.03),
 
+                // ========== IMAGE ==========
                 Container(
                   width: double.infinity,
                   height: height * 0.35,

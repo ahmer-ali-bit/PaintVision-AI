@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/widgets/primary_button.dart';
 import 'package:pinput/pinput.dart';
 
 class VerifyNumber extends StatefulWidget {
@@ -27,6 +28,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
               children: [
                 SizedBox(height: height * 0.1),
 
+                // ========== VERIFY YOUR NUMBER ==========
                 Text(
                   "Verify Your Number",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -34,6 +36,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
 
                 SizedBox(height: height * 0.04),
 
+                // ========== DESCRIPTION TEXT ==========
                 Text(
                   "Enter th 6 digit code sent to",
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
@@ -96,31 +99,8 @@ class _VerifyNumberState extends State<VerifyNumber> {
 
                 SizedBox(height: height * 0.1),
 
-                // ========== LOGIN BUTTON ==========
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      ;
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: Text(
-                      'Login',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+                // ========== VERIFY BUTTON ==========
+                PrimaryButton(text: 'Verify', onTap: () {}),
               ],
             ),
           ),

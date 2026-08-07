@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/brands/brands.dart';
 
 class CategoriesScreen extends StatelessWidget {
   final List<Map<String, dynamic>> categories = [
@@ -40,60 +41,62 @@ class CategoriesScreen extends StatelessWidget {
     },
   ];
 
+  CategoriesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Title
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back_ios),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // ========== TITLE & BUTTON ==========
+            Row(
+              children: [
+                BackButton(),
+                Text(
+                  'Categories',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
-                  Text(
-                    'Categories',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-
-              // Categories List
-              Expanded(
-                child: ListView.separated(
-                  itemCount: categories.length,
-                  separatorBuilder: (context, index) => SizedBox(height: 12),
-                  itemBuilder: (context, index) {
-                    return CategoryCard(
-                      name: categories[index]['name'],
-                      imagePath: categories[index]['image'],
-                      bgColor: categories[index]['bgColor'],
-                      onTap: () {},
-                    );
-                  },
                 ),
+              ],
+            ),
+
+            // SizedBox(height: height * 0.01),
+
+            // ========== CATEGORY LIST ==========
+            Expanded(
+              child: ListView.separated(
+                itemCount: categories.length,
+                separatorBuilder: (context, index) => SizedBox(height: 12),
+                itemBuilder: (context, index) {
+                  return CategoryCard(
+                    name: categories[index]['name'],
+                    imagePath: categories[index]['image'],
+                    bgColor: categories[index]['bgColor'],
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BrandsScreen()),
+                      );
+                    },
+                  );
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
+// ========== REUSEABLE CATEGORY CARD WIDGET ==========
 // Reusable Category Card Widget
 class CategoryCard extends StatelessWidget {
   final String name;
@@ -102,33 +105,28 @@ class CategoryCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const CategoryCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.imagePath,
     required this.bgColor,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Material(
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Container(
+          margin: EdgeInsets.symmetric(horizontal: width * 0.04),
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: AppColors.card,
             border: Border.all(width: 0.5, color: AppColors.border),
             borderRadius: BorderRadius.circular(12),
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.grey.withOpacity(0.15),
-            //     blurRadius: 8,
-            //     offset: Offset(0, 2),
-            //   ),
-            // ],
           ),
           child: Row(
             children: [

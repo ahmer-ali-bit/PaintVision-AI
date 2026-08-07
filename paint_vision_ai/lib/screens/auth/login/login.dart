@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/create_account.dart';
-import 'package:paint_vision_ai/screens/forgot_password.dart';
+import 'package:paint_vision_ai/screens/auth/login/create%20account/create_account.dart';
+import 'package:paint_vision_ai/screens/auth/login/forgot%20password/forgot_password.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home_dashboard.dart';
 import 'package:paint_vision_ai/utils/validator.dart';
+import 'package:paint_vision_ai/widgets/primary_button.dart';
 import 'package:paint_vision_ai/widgets/text_form_field.dart';
 import 'package:paint_vision_ai/widgets/validation_checker.dart';
 
@@ -144,43 +146,30 @@ class _LoginState extends State<LoginScreen> {
                     SizedBox(height: height * 0.03),
 
                     // ========== LOGIN BUTTON ==========
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: _isFormValid
-                            ? () {
-                                print('Email: ${_email.text}');
-                                print('Password: ${_password.text}');
-                              }
-                            : null,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: _isFormValid
-                              ? AppColors.primary
-                              : Colors.grey[400],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: Text(
-                          _isFormValid ? 'LoginScreen' : 'LoginScreen',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                    PrimaryButton(
+                      text: 'Login',
+                      onTap: _isFormValid ? () {} : null,
+                      isEnabled: _isFormValid,
                     ),
 
                     SizedBox(height: height * 0.03),
 
-                    SizedBox(
-                      child: Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'or continue with',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeDashboardScreen(),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        child: Center(
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'or continue with',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),

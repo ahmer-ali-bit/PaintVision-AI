@@ -1,12 +1,21 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class Onboarding2 extends StatelessWidget {
-  const Onboarding2({super.key});
+class OnboardingPageWidget extends StatelessWidget {
+  String text;
+  String desText;
+  String imgPath;
+  OnboardingPageWidget({
+    super.key,
+    required this.text,
+    required this.desText,
+    required this.imgPath,
+  });
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -14,9 +23,7 @@ class Onboarding2 extends StatelessWidget {
           height: height * 0.3,
           width: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/onboarding_2.png'),
-            ),
+            image: DecorationImage(image: AssetImage(imgPath)),
           ),
         ),
 
@@ -24,14 +31,15 @@ class Onboarding2 extends StatelessWidget {
 
         Text(
           maxLines: 2,
-          "AI Color\nRecommendation",
+          text,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
         ),
 
         SizedBox(height: height * 0.02),
 
         Text(
-          'Get smart color suggestions\nbased on your room lighting\nand style',
+          desText,
+          // 'Explore top brands, compare\nprices and get the\nbest deals deliverd to you',
           style: TextStyle(fontSize: 18),
         ),
       ],
