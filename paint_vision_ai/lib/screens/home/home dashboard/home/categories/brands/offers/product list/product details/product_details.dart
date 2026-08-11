@@ -22,7 +22,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: height,
           width: width,
           child: Column(
@@ -183,11 +183,11 @@ class ButtonWidget extends StatelessWidget {
   final Color bgColor;
   String buttonText;
   ButtonWidget({
-    Key? key,
+    super.key,
     required this.ontap,
     required this.bgColor,
     required this.buttonText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -216,14 +216,14 @@ class ImageWithShadow extends StatelessWidget {
   final Offset offset;
 
   const ImageWithShadow({
-    Key? key,
+    super.key,
     required this.imagePath,
     this.width,
     this.height,
     this.shadowColor = Colors.black,
     this.blur = 8,
     this.offset = const Offset(0, 5),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -237,7 +237,7 @@ class ImageWithShadow extends StatelessWidget {
             imageFilter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                shadowColor.withOpacity(0.5),
+                shadowColor.withValues(alpha: 0.5),
                 BlendMode.srcATop,
               ),
               child: Image.asset(imagePath, width: width, height: height),
@@ -256,7 +256,7 @@ class SelectSize extends StatelessWidget {
   final Color? bgColor;
   String text;
 
-  SelectSize({Key? key, this.bgColor, required this.text}) : super(key: key);
+  SelectSize({super.key, this.bgColor, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -272,7 +272,7 @@ class SelectSize extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          text!,
+          text,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
@@ -282,7 +282,7 @@ class SelectSize extends StatelessWidget {
 
 class SelectColor extends StatelessWidget {
   final Color color;
-  const SelectColor({Key? key, required this.color}) : super(key: key);
+  const SelectColor({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {

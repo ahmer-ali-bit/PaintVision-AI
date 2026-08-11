@@ -10,12 +10,12 @@ class SeeAllButton extends StatelessWidget {
   final double? fontsize;
 
   SeeAllButton({
-    Key? key,
+    super.key,
     required this.buttonText,
     required this.desText,
     required this.navigateTo,
     this.fontsize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

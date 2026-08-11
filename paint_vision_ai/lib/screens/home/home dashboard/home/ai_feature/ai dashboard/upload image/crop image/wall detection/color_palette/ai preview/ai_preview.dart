@@ -138,7 +138,7 @@ class _AiPreviewScreenState extends State<AiPreviewScreen> {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.1),
+                            color: Colors.grey.withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -156,7 +156,7 @@ class _AiPreviewScreenState extends State<AiPreviewScreen> {
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
+                                  color: Colors.grey.withValues(alpha: 0.2),
                                   blurRadius: 4,
                                   offset: const Offset(0, 1),
                                 ),
@@ -202,7 +202,9 @@ class _AiPreviewScreenState extends State<AiPreviewScreen> {
                                         : null,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.15),
+                                        color: Colors.grey.withValues(
+                                          alpha: 0.15,
+                                        ),
                                         blurRadius: 3,
                                         offset: const Offset(0, 1),
                                       ),

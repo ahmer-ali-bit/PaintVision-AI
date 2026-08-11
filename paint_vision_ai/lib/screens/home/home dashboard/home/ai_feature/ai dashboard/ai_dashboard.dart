@@ -69,7 +69,7 @@ class _AiDashboardScreenState extends State<AiDashboardScreen> {
               child: ListView.separated(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                 itemCount: features.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 12),
+                separatorBuilder: (_, _) => const SizedBox(height: 12),
                 itemBuilder: (context, index) {
                   final item = features[index];
                   return GestureDetector(
