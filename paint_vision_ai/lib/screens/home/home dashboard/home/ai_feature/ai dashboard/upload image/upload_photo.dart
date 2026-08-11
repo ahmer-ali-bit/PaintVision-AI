@@ -74,7 +74,7 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: height,
           width: width,
           child: Column(

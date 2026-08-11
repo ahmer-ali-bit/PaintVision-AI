@@ -128,7 +128,7 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
               child: ListView.separated(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                 itemCount: reviews.length,
-                separatorBuilder: (_, __) => const Divider(),
+                separatorBuilder: (_, _) => const Divider(),
                 itemBuilder: (context, index) {
                   final review = reviews[index];
                   return Padding(

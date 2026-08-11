@@ -11,7 +11,7 @@ import 'package:paint_vision_ai/widgets/primary_button.dart';
 
 class CropImageScreen extends StatefulWidget {
   final File? imageFile;
-  const CropImageScreen({Key? key, this.imageFile}) : super(key: key);
+  const CropImageScreen({super.key, this.imageFile});
 
   @override
   State<CropImageScreen> createState() => _CropImageScreenState();

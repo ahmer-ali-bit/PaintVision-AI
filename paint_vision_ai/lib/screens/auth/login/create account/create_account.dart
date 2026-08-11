@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
-import 'package:paint_vision_ai/screens/home/home%20dashboard/home_dashboard.dart';
 import 'package:paint_vision_ai/screens/auth/login/login.dart';
 import 'package:paint_vision_ai/utils/validator.dart';
 import 'package:paint_vision_ai/widgets/primary_button.dart';

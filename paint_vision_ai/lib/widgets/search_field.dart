@@ -6,8 +6,7 @@ class SearchFieldWidget extends StatelessWidget {
   final double? width; // Ye ratio hoga (0.75 matlab 75% width)
   final double? height;
 
-  const SearchFieldWidget({Key? key, this.text, this.width, this.height})
-    : super(key: key);
+  const SearchFieldWidget({super.key, this.text, this.width, this.height});
 
   @override
   Widget build(BuildContext context) {

@@ -75,7 +75,7 @@ class _ColorPaletteScreenState extends State<ColorPaletteScreen> {
                 physics: NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                 itemCount: paintColors.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 16),
+                separatorBuilder: (_, _) => const SizedBox(height: 16),
                 itemBuilder: (context, index) {
                   final item = paintColors[index];
 

@@ -11,13 +11,13 @@ class ProductRating extends StatelessWidget {
   final VoidCallback? onTap;
 
   const ProductRating({
-    Key? key,
+    super.key,
     required this.rating,
     required this.reviewCount,
     this.starCount = 5,
     this.size,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
