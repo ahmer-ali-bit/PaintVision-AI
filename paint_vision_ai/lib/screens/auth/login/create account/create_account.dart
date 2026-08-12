@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/auth/login/create%20account/verify%20number/verify_number.dart';
 import 'package:paint_vision_ai/screens/auth/login/login.dart';
 import 'package:paint_vision_ai/utils/validator.dart';
 import 'package:paint_vision_ai/widgets/primary_button.dart';
@@ -269,8 +270,17 @@ class _CreateAccountState extends State<CreateAccountScreen> {
 
                     // ========== REGISTER BUTTON ==========
                     PrimaryButton(
-                      text: 'Login',
-                      onTap: _isFormValid ? () {} : null,
+                      text: 'Sign Up',
+                      onTap: _isFormValid
+                          ? () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => VerifyNumber(),
+                                ),
+                              );
+                            }
+                          : null,
                       isEnabled: _isFormValid,
                     ),
 

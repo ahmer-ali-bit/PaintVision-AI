@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:paint_vision_ai/notifications/notification.dart';
 import 'package:paint_vision_ai/screens/home/home%20dashboard/home_dashboard.dart';
+import 'package:paint_vision_ai/screens/onboarding/onboarding_dashboard.dart';
+import 'package:paint_vision_ai/screens/profile/profile.dart';
 import 'package:paint_vision_ai/screens/shoping%20&%20checkouts/wishlist/carts/address/checkout/card%20payment/order%20success/order_success.dart';
 import 'package:paint_vision_ai/screens/shoping%20&%20checkouts/wishlist/wishlist.dart';
 
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: HomeDashboardScreen(),
+      home: OnboardingDashboard(),
       debugShowCheckedModeBanner: false,
     );
   }
