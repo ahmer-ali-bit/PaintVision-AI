@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/cart/cart.dart';
 import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/brands/offers/product%20list/product%20details/reviews/reviews.dart';
 import 'package:paint_vision_ai/widgets/rating_star%20widget.dart';
 
@@ -148,7 +149,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           children: [
                             Expanded(
                               child: ButtonWidget(
-                                ontap: () {},
+                                ontap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CartScreen(),
+                                    ),
+                                  );
+                                },
                                 bgColor: AppColors.primary,
                                 buttonText: 'Add to Cart',
                               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home_dashboard.dart';
 import 'package:paint_vision_ai/widgets/primary_button.dart';
 import 'package:pinput/pinput.dart';
 
@@ -100,7 +101,17 @@ class _VerifyNumberState extends State<VerifyNumber> {
                 SizedBox(height: height * 0.1),
 
                 // ========== VERIFY BUTTON ==========
-                PrimaryButton(text: 'Verify', onTap: () {}),
+                PrimaryButton(
+                  text: 'Verify',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeDashboardScreen(),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),

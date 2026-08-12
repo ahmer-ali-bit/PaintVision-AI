@@ -148,28 +148,27 @@ class _LoginState extends State<LoginScreen> {
                     // ========== LOGIN BUTTON ==========
                     PrimaryButton(
                       text: 'Login',
-                      onTap: _isFormValid ? () {} : null,
+                      onTap: _isFormValid
+                          ? () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomeDashboardScreen(),
+                                ),
+                              );
+                            }
+                          : null,
                       isEnabled: _isFormValid,
                     ),
 
                     SizedBox(height: height * 0.03),
 
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => HomeDashboardScreen(),
-                          ),
-                        );
-                      },
-                      child: SizedBox(
-                        child: Center(
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            'or continue with',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                    SizedBox(
+                      child: Center(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          'or continue with',
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

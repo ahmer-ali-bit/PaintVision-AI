@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/notifications/notification.dart';
 import 'package:paint_vision_ai/screens/home/home%20dashboard/home/ai_feature/ai%20dashboard/ai_dashboard.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/brands/brands.dart';
+import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/brands/offers/product%20list/product_list.dart';
 import 'package:paint_vision_ai/screens/home/home%20dashboard/home/categories/categories.dart';
+import 'package:paint_vision_ai/screens/shoping%20&%20checkouts/wishlist/wishlist.dart';
 import 'package:paint_vision_ai/widgets/search_field.dart';
 import 'package:paint_vision_ai/widgets/see_all_button.dart';
 
@@ -64,12 +68,40 @@ class _HomeDashboardScreenState extends State<HomeScreen> {
                       Spacer(),
 
                       // ========== ICON ==========
-                      Badge(
-                        label: Text('2'),
-                        textColor: Colors.white,
-                        backgroundColor: AppColors.red,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => WishlistScreen(),
+                            ),
+                          );
+                        },
+                        child: Badge(
+                          label: Text('2'),
+                          textColor: Colors.white,
+                          backgroundColor: AppColors.red,
 
-                        child: Icon(Icons.favorite_border),
+                          child: Icon(Icons.favorite_border),
+                        ),
+                      ),
+                      SizedBox(width: width * 0.04),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NotificationsScreen(),
+                            ),
+                          );
+                        },
+                        child: Badge(
+                          label: Text('8'),
+                          textColor: Colors.white,
+                          backgroundColor: AppColors.red,
+
+                          child: Icon(Icons.notifications_outlined),
+                        ),
                       ),
                     ],
                   ),
@@ -208,7 +240,14 @@ class _HomeDashboardScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       // final isSelected = _selectedIndex == index;
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BrandsScreen(),
+                            ),
+                          );
+                        },
                         child: SizedBox(
                           width: width * 0.17,
                           // margin: EdgeInsets.symmetric(horizontal: 6),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/additional%20features/paint%20calculator/paint_calculator.dart';
 import 'package:paint_vision_ai/screens/profile/addressess/addressess.dart';
+import 'package:paint_vision_ai/screens/profile/help%20&%20support/help&support.dart';
 import 'package:paint_vision_ai/screens/profile/my%20designs/my_designs.dart';
+import 'package:paint_vision_ai/screens/profile/payment%20method/payment_method.dart';
 import 'package:paint_vision_ai/screens/profile/setting/setting.dart';
 import 'package:paint_vision_ai/screens/shoping%20&%20checkouts/wishlist/carts/address/checkout/card%20payment/order%20success/my%20orders/my_orders.dart';
 import 'package:paint_vision_ai/screens/shoping%20&%20checkouts/wishlist/wishlist.dart';
@@ -41,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     {
       "icon": Icons.credit_card_outlined,
       "title": "Payment Methods",
-      "screen": const MyOrdersScreen(),
+      "screen": const PaymentMethodsScreen(),
     },
     {
       "icon": Icons.favorite_outline,
@@ -56,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     {
       "icon": Icons.help_outline,
       "title": "Help & Support",
-      "screen": const MyOrdersScreen(),
+      "screen": const HelpSupportScreen(),
     },
   ];
 
@@ -79,11 +82,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 padding: EdgeInsets.symmetric(horizontal: width * 0.04),
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: width * 0.09,
-                      backgroundColor: Colors.grey.shade200,
-                      backgroundImage: AssetImage(userImage),
-                      onBackgroundImageError: (_, __) {},
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PaintCalculatorScreen(),
+                          ),
+                        );
+                      },
+                      child: CircleAvatar(
+                        radius: width * 0.09,
+                        backgroundColor: Colors.grey.shade200,
+                        backgroundImage: AssetImage(userImage),
+                        onBackgroundImageError: (_, __) {},
+                      ),
                     ),
 
                     SizedBox(width: width * 0.04),

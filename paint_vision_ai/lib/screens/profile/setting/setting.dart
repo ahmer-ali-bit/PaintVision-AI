@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/screens/profile/setting/language/language.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -96,7 +97,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       width: width,
                       height: height,
                       onTap: () {
-                        _showLanguageDialog();
+                        // _showLanguageDialog();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SelectLanguageScreen(),
+                          ),
+                        );
                       },
                     ),
 
@@ -336,44 +343,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  // ✅ Language Selection Dialog
-  void _showLanguageDialog() {
-    final List<String> languages = [
-      "English",
-      "Urdu",
-      "Arabic",
-      "Spanish",
-      "French",
-    ];
+  // // ✅ Language Selection Dialog
+  // void _showLanguageDialog() {
+  //   final List<String> languages = [
+  //     "English",
+  //     "Urdu",
+  //     "Arabic",
+  //     "Spanish",
+  //     "French",
+  //   ];
 
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        title: const Text(
-          "Select Language",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: languages.map((lang) {
-            return RadioListTile<String>(
-              title: Text(lang),
-              value: lang,
-              groupValue: selectedLanguage,
-              activeColor: AppColors.primary,
-              onChanged: (value) {
-                setState(() {
-                  selectedLanguage = value!;
-                });
-                Navigator.pop(context);
-              },
-            );
-          }).toList(),
-        ),
-      ),
-    );
-  }
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) => AlertDialog(
+  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+  //       title: const Text(
+  //         "Select Language",
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       content: Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: languages.map((lang) {
+  //           return RadioListTile<String>(
+  //             title: Text(lang),
+  //             value: lang,
+  //             groupValue: selectedLanguage,
+  //             activeColor: AppColors.primary,
+  //             onChanged: (value) {
+  //               setState(() {
+  //                 selectedLanguage = value!;
+  //               });
+  //               Navigator.pop(context);
+  //             },
+  //           );
+  //         }).toList(),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   // ✅ Currency Selection Dialog
   void _showCurrencyDialog() {
