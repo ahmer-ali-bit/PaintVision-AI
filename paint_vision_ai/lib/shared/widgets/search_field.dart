@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/core/constants/app_colors.dart';
 
 class SearchFieldWidget extends StatelessWidget {
   final String? text;
@@ -7,6 +7,7 @@ class SearchFieldWidget extends StatelessWidget {
   final TextEditingController? controller; // ✅ Optional controller
   final double? width;
   final double? height;
+  final VoidCallback? onTap;
 
   const SearchFieldWidget({
     super.key,
@@ -15,6 +16,7 @@ class SearchFieldWidget extends StatelessWidget {
     this.controller, // ✅ Add here
     this.width,
     this.height,
+    this.onTap,
   });
 
   @override
@@ -26,6 +28,7 @@ class SearchFieldWidget extends StatelessWidget {
       width: screenWidth * (width ?? 1.0),
       child: TextField(
         controller: controller, // ✅ Use controller
+        onTap: onTap,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),

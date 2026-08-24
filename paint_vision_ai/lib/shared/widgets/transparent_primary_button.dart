@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/core/constants/app_colors.dart';
 
 class TransparentPrimaryButtonWidget extends StatelessWidget {
   final VoidCallback onTap;
@@ -13,9 +13,11 @@ class TransparentPrimaryButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
     return Container(
       width: double.infinity,
-      height: 50,
+      height: height * 0.06,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.primary),
         borderRadius: BorderRadius.circular(12),

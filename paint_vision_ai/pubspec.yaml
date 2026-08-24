@@ -37,6 +37,9 @@ dependencies:
   pinput: 
   dotted_border: 
   image_picker:
+  provider: 
+  crop_your_image: 
+  flutter_colorpicker: ^1.1.0
 
 dev_dependencies:
   flutter_test:

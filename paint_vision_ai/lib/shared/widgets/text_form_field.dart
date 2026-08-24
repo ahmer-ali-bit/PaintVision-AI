@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/core/constants/app_colors.dart';
 
 class CTextFormField extends StatelessWidget {
   final String hintText;

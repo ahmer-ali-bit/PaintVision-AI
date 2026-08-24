@@ -1,7 +1,7 @@
 // lib/widgets/validation_checker.dart
 
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/constants/app_colors.dart';
+import 'package:paint_vision_ai/core/constants/app_colors.dart';
 
 class ValidationChecker extends StatelessWidget {
   final Map<String, bool> checks;
@@ -10,7 +10,6 @@ class ValidationChecker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Kuch type nahi kia — kuch mat dikhao
     if (checks.isEmpty) return const SizedBox();
 
     // Sab valid — kuch mat dikhao (sirf green tick field mein)
