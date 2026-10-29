@@ -30,7 +30,7 @@ class ColorMatcherProvider extends ChangeNotifier {
   List<InputMethod> get methods => _methods;
 
   String get hexCode {
-    return '#${_selectedColor.value.toRadixString(16).substring(2).toUpperCase()}';
+    return '#${_selectedColor.toARGB32().toRadixString(16).substring(2).toUpperCase()}';
   }
 
   void changeColor(Color color) {

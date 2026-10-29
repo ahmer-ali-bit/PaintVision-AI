@@ -206,7 +206,7 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
                           Switch(
                             value: provider.isDefault,
                             onChanged: provider.toggleDefault,
-                            activeColor: Colors.white,
+                            activeThumbColor: Colors.white,
                             activeTrackColor: const Color(0xFF2563EB),
                           ),
                         ],

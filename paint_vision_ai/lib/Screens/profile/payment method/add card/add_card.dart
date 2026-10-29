@@ -177,7 +177,7 @@ class AddCardScreen extends StatelessWidget {
                           Switch(
                             value: provider.saveCard,
                             onChanged: provider.toggleSaveCard,
-                            activeColor: Colors.white,
+                            activeThumbColor: Colors.white,
                             activeTrackColor: AppColors.primary,
                             inactiveThumbColor: Colors.white,
                             inactiveTrackColor: Colors.grey.shade300,

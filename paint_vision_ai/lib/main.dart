@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:paint_vision_ai/Screens/additional%20features/book%20color%20consultant/book%20consultant/book_consultant.dart';
-import 'package:paint_vision_ai/Screens/additional%20features/book%20color%20consultant/book_color_cosultant.dart';
-import 'package:paint_vision_ai/Screens/home/home%20dashboard/home_dashboard.dart';
 import 'package:paint_vision_ai/Screens/onboarding/onboarding_dashboard.dart';
 import 'package:paint_vision_ai/providers/AI%20preview%20provider/ai_preview_provider.dart';
 import 'package:paint_vision_ai/providers/add%20card%20provider/add_card_provider.dart';

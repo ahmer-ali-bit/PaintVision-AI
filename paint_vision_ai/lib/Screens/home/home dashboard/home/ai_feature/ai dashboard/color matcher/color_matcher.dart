@@ -121,7 +121,7 @@ class ColorMatcherScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -133,7 +133,9 @@ class ColorMatcherScreen extends StatelessWidget {
                             height: width * 0.12,
                             width: width * 0.12,
                             decoration: BoxDecoration(
-                              color: const Color(0xFF6C63FF).withOpacity(0.1),
+                              color: const Color(
+                                0xFF6C63FF,
+                              ).withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Icon(
